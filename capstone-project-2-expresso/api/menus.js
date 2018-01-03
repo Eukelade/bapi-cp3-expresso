@@ -105,8 +105,8 @@ menusRouter.put('/:id', (req, res, next) => {
 });
 
 menusRouter.delete('/:id', (req, res, next) => {
-    const checkSql = 'SELECT * FROM MenuItem WHERE MenuItem.menu_id = $menuId';
-    const checkValues = {$menuId: req.params.menuId};
+    const checkSql = 'SELECT * FROM MenuItem WHERE menu_id = $menuId';
+    const checkValues = {$menuId: req.params.id};
 
     db.get(checkSql, checkValues, (error, menuItem) => {
         if(error){
